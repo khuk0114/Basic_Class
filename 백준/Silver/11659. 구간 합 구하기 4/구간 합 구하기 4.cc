@@ -5,16 +5,19 @@ using namespace std;
 int main()
 {
 	ios::sync_with_stdio(false);
-	cin.tie(nullptr);
+	cin.tie(0);
+	cout.tie(0);
+
 	int n, m;
 	cin >> n >> m;
 
-	vector<int> num(n + 1, 0);
-	vector<int> sum(n + 1, 0);
+	vector<int> sum(n + 1);
+	sum[0] = 0;
 
 	for (int i = 1; i <= n; i++)	{
-		cin >> num[i];
-		sum[i] = sum[i - 1] + num[i];
+		int num;
+		cin >> num;
+		sum[i] = sum[i - 1] + num;
 	}
 
 	for (int k = 0; k < m; k++) {
